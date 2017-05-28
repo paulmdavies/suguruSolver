@@ -1,4 +1,5 @@
-import java.util.Collections;
+package com.paulmdavies.sugurusolver;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
