@@ -16,9 +16,9 @@ public class CageCompleterServiceTest {
         List<List<Integer>> cage = Arrays.asList(Arrays.asList(0, 0), Arrays.asList(0, 1));
 
         CageCompleterService cageCompleterService = new CageCompleterService();
-        List<List<Integer>> updatedSquares = cageCompleterService.completeCage(squares, cage);
+        List<Suggestion> suggestions = cageCompleterService.completeCage(squares, cage);
 
-        assertThat(updatedSquares, is(equalTo(squares)));
+        assertThat(suggestions.size(), is(equalTo(0)));
     }
 
     @Test
@@ -27,8 +27,8 @@ public class CageCompleterServiceTest {
         List<List<Integer>> cage = Arrays.asList(Arrays.asList(0, 0));
 
         CageCompleterService cageCompleterService = new CageCompleterService();
-        List<List<Integer>> updatedSquares = cageCompleterService.completeCage(squares, cage);
+        List<Suggestion> suggestions = cageCompleterService.completeCage(squares, cage);
 
-        assertThat(updatedSquares, is(equalTo(Arrays.asList(Arrays.asList(1)))));
+        assertThat(suggestions, is(equalTo(Arrays.asList(new Suggestion(0, 0, 1)))));
     }
 }
