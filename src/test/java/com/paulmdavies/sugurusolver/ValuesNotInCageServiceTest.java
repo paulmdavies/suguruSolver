@@ -46,4 +46,14 @@ public class ValuesNotInCageServiceTest {
         );
         assertThat(valuesNotInCage, is(equalTo(Stream.of(1, 2, 3, 4).collect(Collectors.toSet()))));
     }
+
+    @Test
+    public void shouldReturnOneForTwoSquareCageWithTwoAlreadyPresent() {
+        ValuesNotInCageService valuesNotInCageService = new ValuesNotInCageService();
+        Set<Integer> valuesNotInCage = valuesNotInCageService.getValuesNotInCage(
+                Arrays.asList(Arrays.asList(2), Arrays.asList(0)),
+                Arrays.asList(Arrays.asList(0, 0), Arrays.asList(1, 0))
+        );
+        assertThat(valuesNotInCage, is(equalTo(Stream.of(1).collect(Collectors.toSet()))));
+    }
 }
