@@ -39,4 +39,16 @@ public class Suggestion {
         result = 31 * result + value;
         return result;
     }
+
+    public int getXCoordinate() {
+        return xCoordinate;
+    }
+
+    public int getYCoordinate() {
+        return yCoordinate;
+    }
+
+    public int getValue() {
+        return value;
+    }
 }
